@@ -1,0 +1,21 @@
+{
+  "name": "Kali Linux Codespace",
+  "image": "kalilinux/kali-rolling:latest",
+  "features": {},
+  "postCreateCommand": "apt update -y && apt upgrade -y && apt install -y kali-linux-headless kali-linux-default git curl wget python3-pip && echo 'Kali setup completed!'",
+  "forwardPorts": [22, 80, 443],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.remote-ssh",
+        "ms-python.python",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb"
+  }
+}
