@@ -1,21 +1,21 @@
 {
-  "name": "Kali Linux Codespace",
+  "name": "Kali Linux Experimental Environment",
   "image": "kalilinux/kali-rolling:latest",
-  "features": {},
-  "postCreateCommand": "apt update -y && apt upgrade -y && apt install -y kali-linux-headless kali-linux-default git curl wget python3-pip && echo 'Kali setup completed!'",
-  "forwardPorts": [22, 80, 443],
+  "postCreateCommand": "apt update -y && apt upgrade -y && apt install -y kali-linux-headless kali-tools-top10 python3-pip python3-venv nmap metasploit-framework net-tools htop curl wget git && echo '=== Kali 环境安装完成！可以开始实验了 ==='",
+  "forwardPorts": [22, 80, 443, 8080, 3000],
   "remoteUser": "root",
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode-remote.remote-ssh",
         "ms-python.python",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "ms-vscode-remote.remote-ssh"
       ]
     }
-  },
-  "hostRequirements": {
-    "cpus": 2,
-    "memory": "8gb"
   }
 }
